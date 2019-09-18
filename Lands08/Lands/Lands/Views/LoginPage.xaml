@@ -20,7 +20,7 @@
                 VerticalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2.5*"/>
                 </Grid.ColumnDefinitions>
                 <Label
                     Grid.Row="0"
@@ -67,15 +67,16 @@
                     
                 </Switch>
             </StackLayout>
+            <StackLayout
+                VerticalOptions="CenterAndExpand">
                 <Label
                     HorizontalOptions="Center"
                     Text="Forgot your password..."
-                    TextColor="Blue"
-                    VerticalOptions="CenterAndExpand">
+                    TextColor="Blue">
                 </Label>
-
+            </StackLayout>
             <StackLayout
-                Margin="40,0"
+                Margin="35,0"
                 Orientation="Horizontal"
                 VerticalOptions="CenterAndExpand">
                 <Button
@@ -84,6 +85,7 @@
                     Command="{Binding LoginCommand}"
                     HeightRequest="46"
                     HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                     Text="Login"
                     TextColor="White">
                 </Button>
@@ -92,13 +94,14 @@
                     BorderRadius="23"
                     HeightRequest="46"
                     HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                     Text="Register"
                     TextColor="White">
                 </Button>
             </StackLayout>
             <StackLayout
                 Orientation="Horizontal"
-                Margin="40, 0"
+                Margin="35, 0"
                 VerticalOptions="EndAndExpand">
                 <Image
                     HorizontalOptions="Start"
