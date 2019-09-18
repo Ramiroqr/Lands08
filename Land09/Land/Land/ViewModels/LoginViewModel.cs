@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using Land.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -88,11 +89,13 @@ namespace Land.ViewModels
                 return;
             }
 
-            await Application.Current.MainPage.DisplayAlert(
-                    "Ok",
-                    "Accedo concedido...",
-                    "Accept");
-            return;
+            this.Email = string.Empty;
+            this.Password = string.Empty;
+
+            //para una unica instanciación de la MainViewModel
+            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            //Para la apilacion de paginas
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
         }
         #endregion
 
@@ -101,6 +104,8 @@ namespace Land.ViewModels
         {
             this.IsRemembered = true;
             this.IsEnabled = true;
+            this.Email = "r@gmail.com";
+            this.Password = "123";
         }
         #endregion
     }
