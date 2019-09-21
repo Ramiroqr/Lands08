@@ -89,7 +89,7 @@ namespace Land.ViewModels
                 return;
             }
 
-            this.Email = string.Empty;
+            this.Email = string.Empty; ;
             this.Password = string.Empty;
 
             //para una unica instanciación de la MainViewModel
